@@ -25,13 +25,13 @@ func GetIndex(ref string) (col, row int) {
 
 	rowIndex, _ = strconv.Atoi(rowPart)
 
+	rowIndex--
 	colIndex--
 
 	return colIndex, rowIndex
 }
 
-// GetRef will get a cell reference for 0-based col indexes,
-// and 1-based row indexes.
+// GetRef will get a cell reference for 0-based indexes.
 // 2, 22 returns C22
 func GetRef(col, row int) (ref string) {
 	if col < 0 || row < 0 {
@@ -45,5 +45,5 @@ func GetRef(col, row int) (ref string) {
 		i = (i - 1) / 26
 	}
 
-	return fmt.Sprintf("%s%d", colName, row)
+	return fmt.Sprintf("%s%d", colName, row+1)
 }

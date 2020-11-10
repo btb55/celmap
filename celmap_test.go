@@ -7,9 +7,9 @@ import (
 func TestGetIndex(t *testing.T) {
 	var (
 		expectedFirstCol  = 2
-		expectedFirstRow  = 22
+		expectedFirstRow  = 21
 		expectedSecondCol = 28
-		expectedSecondRow = 1022
+		expectedSecondRow = 1021
 	)
 
 	actualFirstCol, actualFirstRow := GetIndex("C22")
@@ -32,8 +32,8 @@ func TestGetRef(t *testing.T) {
 		expectedSecondString = "AC1022"
 	)
 
-	actualFirstString := GetRef(2, 22)
-	actualSecondString := GetRef(28, 1022)
+	actualFirstString := GetRef(2, 21)
+	actualSecondString := GetRef(28, 1021)
 
 	if actualFirstString != expectedFirstString {
 		t.Fatalf("Expected %s for first ref but got %s", expectedFirstString, actualFirstString)
