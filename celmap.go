@@ -13,7 +13,7 @@ import (
 )
 
 // GetIndex will get the column and row number for a given Excel cell string.
-// C22 returns 2, 22
+// C22 returns 2, 21
 func GetIndex(ref string) (col, row int) {
 	colPart := strings.Map(ooxml.GetLettersFn, ref)
 	rowPart := strings.Map(ooxml.GetNumbersFn, ref)
@@ -32,7 +32,7 @@ func GetIndex(ref string) (col, row int) {
 }
 
 // GetRef will get a cell reference for 0-based indexes.
-// 2, 22 returns C22
+// 2, 21 returns C22
 func GetRef(col, row int) (ref string) {
 	if col < 0 || row < 0 {
 		return ""
